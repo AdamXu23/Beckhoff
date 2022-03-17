@@ -15,7 +15,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{0BC6695F-CCD8-47B1-80A6-5C30E655A6D4}" Name="CX8190 OPC UA Client" PrjFilePath="CX8190 OPC UA Client\CX8190 OPC UA Client.plcproj" TmcFilePath="CX8190 OPC UA Client\CX8190 OPC UA Client.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX8190 OPC UA Client\CX8190 OPC UA Client.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
 					<Name>CX8190 OPC UA Client Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

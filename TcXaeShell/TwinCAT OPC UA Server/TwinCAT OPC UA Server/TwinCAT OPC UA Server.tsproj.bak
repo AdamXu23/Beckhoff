@@ -1,12 +1,7 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.25">
-	<Project ProjectGUID="{C904210A-4348-4D7A-88AB-D7C6DACD33DA}" TargetNetId="5.104.86.109.1.1" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{4D659A0B-AC13-4E5E-9BE7-376BA8485E8D}" Target64Bit="true" ShowHideConfigurations="#x106">
 		<System>
-			<Licenses>
-				<Target>
-					<ManualSelect>{BDCC0070-42D5-49AE-ABF1-1D4434813D60}</ManualSelect>
-				</Target>
-			</Licenses>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -14,9 +9,9 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{0BC6695F-CCD8-47B1-80A6-5C30E655A6D4}" Name="CX8190 OPC UA Client" PrjFilePath="CX8190 OPC UA Client\CX8190 OPC UA Client.plcproj" TmcFilePath="CX8190 OPC UA Client\CX8190 OPC UA Client.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX8190 OPC UA Client\CX8190 OPC UA Client.tmc">
-					<Name>CX8190 OPC UA Client Instance</Name>
+			<Project GUID="{A7EE1211-D387-45BA-8962-F115F9638E2F}" Name="TwinCAT OPC UA Server" PrjFilePath="TwinCAT OPC UA Server\TwinCAT OPC UA Server.plcproj" TmcFilePath="TwinCAT OPC UA Server\TwinCAT OPC UA Server.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>TwinCAT OPC UA Server Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
 						<Context>

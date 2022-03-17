@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <GVL Name="OPCUA" Id="{839b3865-fc5f-4e49-af27-6083970ad203}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	bBool1:BOOL;
+	{attribute 'OPC.UA.DA' := '1'}
+	bBool2:BOOL;
+	{attribute 'OPC.UA.DA' := '1'}
+	bBool3:BOOL;
+	
+	{attribute 'OPC.UA.DA' := '1'}
+	iInt1:INT;
+	{attribute 'OPC.UA.DA' := '1'}
+	iInt2:INT;
+	{attribute 'OPC.UA.DA' := '1'}
+	iInt3:INT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
