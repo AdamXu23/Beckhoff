@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_SerialCom" Id="{c70f9cc2-e962-4677-8a00-b9f8bf30f1ad}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SerialCom
+VAR_IN_OUT
+	RxBuffer	: ComBuffer;
+	TxBuffer	: ComBuffer;
+END_VAR
+VAR
+	
+	Timer		: TON :=(PT:=T#1S);
+	fbSend		: SendString;
+	bSendBusy	: BOOL;
+	eSendErrorID: ComError_t;
+	bSend		: BOOL;
+	bReceive		: BOOL;
+	
+	fbReceive:Receivestring;//接收功能宁符决块
+	sReceivedString: STRING;//接收到的字符宏
+	sLastReceivedstring: STRING;//最后接收到的产符书
+	bStringReceived : BOOL;
+	bReceiveBusy: BOOL;
+	breceiveError: BOOL;
+	eReceiveErrorID : ComError_t;
+	bReceiveTimeout: BOOL;
+	nReceiveCounter: UDINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Timer(IN:=bSend);
+IF Timer.Q OR fbSend.Busy THEN
+	Timer(IN:=FALSE);
+	fbSend(
+		SendString:='$02Hellow$03',
+		TxBuffer:= 	TxBuffer,
+		Busy=>bSendBusy,
+		Error=>);
+	IF fbSend.Error <> ComError_t.COMERROR_NOERROR THEN
+		eSendErrorID := fbSend.Error;
+	END_IF
+END_IF
+IF bReceive THEN	
+	fbReceive(
+		Prefix	:= '$02',
+		Suffix	:= '$03',
+		Timeout	:= T#1S,
+		ReceivedString:=sReceivedString,
+		RXbuffer := RxBuffer,
+		StringReceived => bStringReceived,
+		Busy => bReceiveBusy,
+		Error=>,
+		RxTimeout=>bReceiveTimeout);
+	IF fbReceive.Error <> ComError_t.COMERROR_NOERROR THEN
+			eReceiveErrorID := fbReceive.Error;
+	END_IF
+
+	IF bStringReceived THEN
+		nReceiveCounter := nReceiveCounter + 1;
+		sLastReceivedstring := sReceivedString;
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="FB_SerialCom">
+      <LineId Id="9" Count="0" />
+      <LineId Id="272" Count="1" />
+      <LineId Id="275" Count="0" />
+      <LineId Id="277" Count="0" />
+      <LineId Id="279" Count="5" />
+      <LineId Id="274" Count="0" />
+      <LineId Id="286" Count="0" />
+      <LineId Id="321" Count="16" />
+      <LineId Id="318" Count="0" />
+      <LineId Id="309" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

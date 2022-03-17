@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <GVL Name="RS232" Id="{2b58ddf2-7b8d-4cf7-b654-35ac01d51d81}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	EL6001_ComController: SerialLineControl;
+	RxBuffer: ComBuffer;
+	TxBuffer: ComBuffer;
+	ComOUT1 AT%Q* : EL6outData22B;
+	ComIN1 AT%I* : EL6inData22B;
+	EL6001_ErrorID: ComError_t;
+	EL6001_Error : BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
