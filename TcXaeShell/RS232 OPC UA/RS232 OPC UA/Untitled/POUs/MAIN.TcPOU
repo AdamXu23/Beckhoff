@@ -9,7 +9,18 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[RS232.EL6001_ComController(
+      <ST><![CDATA[//PRG_CONNECT(); // Call sample for UA_Connect and UA_Disconnect
+PRG_READ(); // Call sample for UA_Read
+//PRG_READ_IndexRange(); // Call sample for UA_Read
+//PRG_READ_List(); // Call sample for UA_ReadList
+//PRG_READ_List_Array(); // Call sample for UA_ReadList to read array elements
+PRG_WRITE(); // Call sample for UA_Write
+//PRG_WRITE_IndexRange(); // Call sample for UA_Write
+//PRG_METHOD(); // Call sample for UA_MethodCall
+//PRG_HA_SingleNode();	// call sample for UA_HistoryUpdate
+//PRG_HA_MultipleNodes();	// call sample for UA_HistoryUpdate with multiple nodes
+
+RS232.EL6001_ComController(
 	Mode:=SERIALLINEMODE_EL6_22B,
 	pComIn:=ADR(RS232.ComIN1),
 	pComOut:=ADR(RS232.ComOUT1),
@@ -24,11 +35,19 @@ IF RS232.EL6001_ComController.Error THEN
 	RS232.EL6001_ErrorID := RS232.EL6001_ComController.ErrorID;
 END_IF
 fb_SerialCom(
+	sSendString	:= RS232.SendString,
 	RxBuffer	:= RS232.RxBuffer,
-	TxBuffer	:= RS232.TxBuffer
-);]]></ST>
+	TxBuffer	:= RS232.TxBuffer,
+	sLastReceivedstring:=RS232.LastReceivedstring
+);
+RS232.ReceivedString := fb_SerialCom.sReceivedString;
+
+
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="149" Count="8" />
+      <LineId Id="141" Count="1" />
       <LineId Id="2" Count="0" />
       <LineId Id="9" Count="2" />
       <LineId Id="50" Count="4" />
@@ -37,9 +56,14 @@ fb_SerialCom(
       <LineId Id="59" Count="0" />
       <LineId Id="57" Count="0" />
       <LineId Id="122" Count="0" />
+      <LineId Id="134" Count="0" />
       <LineId Id="127" Count="0" />
       <LineId Id="125" Count="0" />
+      <LineId Id="164" Count="0" />
       <LineId Id="124" Count="0" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="139" Count="1" />
+      <LineId Id="138" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

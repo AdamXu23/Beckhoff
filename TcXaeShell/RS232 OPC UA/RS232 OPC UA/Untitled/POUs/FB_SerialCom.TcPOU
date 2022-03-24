@@ -6,32 +6,44 @@ VAR_IN_OUT
 	RxBuffer	: ComBuffer;
 	TxBuffer	: ComBuffer;
 END_VAR
+
 VAR
-	
-	Timer		: TON :=(PT:=T#1S);
 	fbSend		: SendString;
 	bSendBusy	: BOOL;
 	eSendErrorID: ComError_t;
 	bSend		: BOOL;
-	bReceive		: BOOL;
+	bReceive		: BOOL := TRUE;
+	sendsstriung: STRING;
 	
 	fbReceive:Receivestring;//接收功能宁符决块
+	sedstring: STRING;
+END_VAR
+VAR_OUTPUT
 	sReceivedString: STRING;//接收到的字符宏
+END_VAR
+VAR_IN_OUT
+	// 發送出去的字串
+	sSendString: STRING;
 	sLastReceivedstring: STRING;//最后接收到的产符书
+END_VAR
+VAR
 	bStringReceived : BOOL;
 	bReceiveBusy: BOOL;
 	breceiveError: BOOL;
 	eReceiveErrorID : ComError_t;
 	bReceiveTimeout: BOOL;
 	nReceiveCounter: UDINT;
+	sSendString_Len: int;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Timer(IN:=bSend);
-IF Timer.Q OR fbSend.Busy THEN
-	Timer(IN:=FALSE);
+      <ST><![CDATA[sedstring := CONCAT(STR1:= CONCAT(STR1:='$02' , STR2:= sSendString ), STR2:='$03' );
+sSendString_Len := LEN (sSendString);
+IF sSendString_Len > 0 OR fbSend.Busy THEN
+	sSendString :='';
+	sendsstriung:=sedstring;
 	fbSend(
-		SendString:='$02Hellow$03',
+		SendString:=sedstring,
 		TxBuffer:= 	TxBuffer,
 		Busy=>bSendBusy,
 		Error=>);
@@ -61,8 +73,10 @@ IF bReceive THEN
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="FB_SerialCom">
-      <LineId Id="9" Count="0" />
-      <LineId Id="272" Count="1" />
+      <LineId Id="757" Count="1" />
+      <LineId Id="272" Count="0" />
+      <LineId Id="905" Count="0" />
+      <LineId Id="1119" Count="0" />
       <LineId Id="275" Count="0" />
       <LineId Id="277" Count="0" />
       <LineId Id="279" Count="5" />

@@ -52,7 +52,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
 			<BitSize>1</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -61,7 +61,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
 			<BitSize>4</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -77,24 +77,15 @@
 	</ImageDatas>
 	<Project ProjectGUID="{19BA6B3A-A488-43A5-9D8D-C46975BA1A1A}" TargetNetId="5.104.86.109.1.1" ShowHideConfigurations="#x106">
 		<System>
-			<Licenses>
-				<Target>
-					<ManualSelect>{BCA6EE0A-9CE1-4D3F-98CA-413ABC0D94FD}</ManualSelect>
-					<ManualSelect>{BDCC0070-42D5-49AE-ABF1-1D4434813D60}</ManualSelect>
-				</Target>
-			</Licenses>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask_Standard</Name>
 				</Task>
-				<Task Id="4" Priority="1" CycleTime="20000" AmsPort="351" AdtTasks="true">
-					<Name>PlcTask_Fast</Name>
-				</Task>
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{183EE26D-9D23-4471-9A02-4886A4444604}" Name="Untitled" PrjFilePath="Untitled\Untitled.plcproj" TmcFilePath="Untitled\Untitled.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+			<Project GUID="{183EE26D-9D23-4471-9A02-4886A4444604}" Name="Untitled" PrjFilePath="Untitled\Untitled.plcproj" TmcFilePath="Untitled\Untitled.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Untitled\Untitled.tmc">
 					<Name>Untitled Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">

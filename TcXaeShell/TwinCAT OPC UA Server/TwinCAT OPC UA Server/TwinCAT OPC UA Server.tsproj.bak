@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{A7EE1211-D387-45BA-8962-F115F9638E2F}" Name="TwinCAT OPC UA Server" PrjFilePath="TwinCAT OPC UA Server\TwinCAT OPC UA Server.plcproj" TmcFilePath="TwinCAT OPC UA Server\TwinCAT OPC UA Server.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TwinCAT OPC UA Server\TwinCAT OPC UA Server.tmc">
 					<Name>TwinCAT OPC UA Server Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
