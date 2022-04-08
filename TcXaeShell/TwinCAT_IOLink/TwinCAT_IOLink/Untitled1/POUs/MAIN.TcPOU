@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="MAIN" Id="{fbf67ee1-36f3-4031-825a-38fcbb72130e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	nSwitchCtrl : BOOL := TRUE;
+	nRotateUpper : WORD :=16#8000;
+	nRotateLower :WORD :=16#01;
+	bEL6224_Ch1 AT%I* : ARRAY[0..1] OF BYTE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//SICK_Process_Parse(Data:=bEL6224_Ch1 , Process_Data=>GVL.SICK_1_Process );
+GVL.SICK_1_Process := SICK_Process_Parse(Data:=bEL6224_Ch1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="27" Count="122" />
+      <LineId Id="26" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
