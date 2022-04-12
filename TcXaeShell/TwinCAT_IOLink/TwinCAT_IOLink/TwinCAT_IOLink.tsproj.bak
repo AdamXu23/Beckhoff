@@ -24,7 +24,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{A41BF411-944D-4132-B9B5-C43E39E415F9}" Name="Untitled1" PrjFilePath="Untitled1\Untitled1.plcproj" TmcFilePath="Untitled1\Untitled1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Untitled1\Untitled1.tmc">
 					<Name>Untitled1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -100,6 +100,7 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Untitled1^Untitled1 Instance">
 			<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL6224)">
 				<Link VarA="PlcTask Inputs^MAIN.bEL6224_Ch1" VarB="IO-Link Port1^SubIndex 001"/>
