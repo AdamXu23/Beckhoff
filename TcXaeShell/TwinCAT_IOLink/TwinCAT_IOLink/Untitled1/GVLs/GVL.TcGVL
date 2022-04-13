@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <GVL Name="GVL" Id="{4470a63f-3833-43a7-a12a-b41f5804efec}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
-VAR_GLOBAL
-	SICK_1_Process: SICK_Process_Data;
-END_VAR]]></Declaration>
-  </GVL>
-</TcPlcObject>
